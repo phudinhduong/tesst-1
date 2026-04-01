@@ -59,15 +59,16 @@ function App() {
     [stacks, selectedStackId]
   );
 
-  async function onCopy(command) {
-    try {
-      await navigator.clipboard.writeText(command);
-      setCopyMessage('Copied command');
-      setTimeout(() => setCopyMessage(''), 1000);
-    } catch (_err) {
-      setCopyMessage('Copy failed');
-      setTimeout(() => setCopyMessage(''), 1000);
-    }
+  function onCopy(command) {
+    navigator.clipboard.writeText(command)
+      .then(() => {
+        setCopyMessage('Copied command');
+        setTimeout(() => setCopyMessage(''), 1000);
+      })
+      .catch(() => {
+        setCopyMessage('Copy failed');
+        setTimeout(() => setCopyMessage(''), 1000);
+      });
   }
 
   return (
@@ -121,6 +122,14 @@ function App() {
                 <h2>{selectedStep.title}</h2>
                 <p>{selectedStack?.name}</p>
               </div>
+
+              {selectedStack?.description && (
+                <p className="stack-description">{selectedStack.description}</p>
+              )}
+
+              <p className="step-progress">
+                Step {selectedStepIndex + 1} / {steps.length}
+              </p>
 
               <p className="step-description">{selectedStep.description}</p>
 

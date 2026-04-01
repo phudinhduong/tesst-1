@@ -3,7 +3,9 @@ package com.learn.deployguide.service;
 import java.util.List;
 
 import org.springframework.data.domain.Sort;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
 import com.learn.deployguide.dto.StackResponse;
 import com.learn.deployguide.dto.StepResponse;
@@ -34,9 +36,16 @@ public class GuideService {
     }
 
     public List<StepResponse> getSteps(String stackId) {
-        List<StepGuide> steps = stackId == null || stackId.isBlank()
-                ? stepRepository.findAll(Sort.by(Sort.Direction.ASC, "order"))
-                : stepRepository.findByStackIdOrderByOrderAsc(stackId);
+                List<StepGuide> steps;
+
+                if (stackId == null || stackId.isBlank()) {
+                        steps = stepRepository.findAll(Sort.by(Sort.Direction.ASC, "order"));
+                } else {
+                        if (!stackRepository.existsById(stackId)) {
+                                throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Stack not found for provided stackId");
+                        }
+                        steps = stepRepository.findByStackIdOrderByOrderAsc(stackId);
+                }
 
         return steps.stream()
                 .map(step -> new StepResponse(

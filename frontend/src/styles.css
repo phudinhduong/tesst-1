@@ -101,6 +101,17 @@ body {
   color: var(--ink-soft);
 }
 
+.stack-description {
+  margin-top: 8px;
+  color: var(--ink-soft);
+}
+
+.step-progress {
+  margin-top: 8px;
+  font-weight: 600;
+  color: var(--accent);
+}
+
 .step-description {
   line-height: 1.6;
 }
