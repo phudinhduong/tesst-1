@@ -4,9 +4,8 @@ server:
 spring:
   application:
     name: deploy-guide-api
-  data:
-    mongodb:
-      uri: ${MONGODB_URI:mongodb://localhost:27017/deploy_guide}
+  mongodb:
+    uri: ${SPRING_MONGODB_URI:${MONGODB_URI:mongodb://localhost:27017/deploy_guide}}
 
 management:
   endpoints:
