@@ -162,27 +162,30 @@
     - Result: ✅ SUCCESS (Java 25.0.2 LTS and Maven 3.9.14 available)
     - Notes: Maven validated with JAVA_HOME set to JDK 25
   - **Deferred Work**: None
-  - **Commit**: Pending
+  - **Commit**: 6155011 - Step 1: Setup Environment - Compile: N/A
 
 - **Step 2: Setup Baseline**
-  - **Status**: 🔘 Not Started
-  - **Changes Made**: None
+  - **Status**: ✅ Completed
+  - **Changes Made**:
+    - Captured baseline compile result on Java 17
+    - Captured baseline test run result on Java 17
+    - Identified pre-existing compile error location
   - **Review Code Changes**:
     - Sufficiency: ✅ All required changes present
     - Necessity: ✅ All changes necessary
       - Functional Behavior: ✅ Preserved
       - Security Controls: ✅ Preserved
   - **Verification**:
-    - Command: Not run yet
-    - JDK: N/A
-    - Build tool: N/A
-    - Result: Pending
-    - Notes: None
-  - **Deferred Work**: None
+    - Command: `mvn clean test-compile -q` and `mvn clean test -q`
+    - JDK: C:\Users\dinhphu\.jdks\corretto-17.0.14\bin
+    - Build tool: C:\Users\dinhphu\.maven\maven-3.9.14\bin\mvn.cmd
+    - Result: ❗ FAILURE (pre-existing compile error at MongoIndexConfig.java:15)
+    - Notes: Baseline pass rate is 0 because compile failed before tests executed
+  - **Deferred Work**: Resolve compile error during upgrade execution
   - **Commit**: Pending
 
 - **Step 3: Upgrade Runtime and Framework Compatibility**
-  - **Status**: 🔘 Not Started
+  - **Status**: ⏳ In Progress
   - **Changes Made**: None
   - **Review Code Changes**:
     - Sufficiency: ✅ All required changes present
