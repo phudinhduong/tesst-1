@@ -31,6 +31,12 @@ public class SeedDataConfig {
                     "Deploy React on Vercel, Spring Boot on Render, MongoDB Atlas as cloud DB.",
                     1));
 
+            StackGuide optionalStack = stackRepository.save(new StackGuide(
+                    "react-node",
+                    "React + Node.js",
+                    "Optional path: deploy React frontend and Node backend for comparison.",
+                    2));
+
             List<StepGuide> steps = List.of(
                     new StepGuide(
                             stack.getId(),
@@ -68,6 +74,36 @@ public class SeedDataConfig {
                             "Set VITE_API_BASE_URL to Render API URL and deploy React app.",
                             List.of(
                                     "npm install",
+                                    "npm run build"),
+                            "/images/vercel-deploy.svg"
+                    ),
+                    new StepGuide(
+                            optionalStack.getId(),
+                            1,
+                            "Create Node.js backend",
+                            "Initialize a lightweight Express API to expose guide endpoints.",
+                            List.of(
+                                    "npm init -y",
+                                    "npm install express cors"),
+                            "/images/backend-setup.svg"
+                    ),
+                    new StepGuide(
+                            optionalStack.getId(),
+                            2,
+                            "Deploy Node backend",
+                            "Deploy the Node API on Render and expose a public base URL.",
+                            List.of(
+                                    "Build: npm install",
+                                    "Start: node server.js"),
+                            "/images/render-deploy.svg"
+                    ),
+                    new StepGuide(
+                            optionalStack.getId(),
+                            3,
+                            "Connect frontend to Node API",
+                            "Update VITE_API_BASE_URL and redeploy frontend on Vercel.",
+                            List.of(
+                                    "VITE_API_BASE_URL=https://<node-api-domain>",
                                     "npm run build"),
                             "/images/vercel-deploy.svg"
                     ));

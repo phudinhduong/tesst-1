@@ -187,7 +187,7 @@ Optional automated check from workspace root:
 
 - This MVP is intentionally simple: no auth, no admin UI.
 - Seed data runs once if database is empty.
-- You can add more stacks later (for example React + Node) using the same data model.
+- Initial seed includes 2 stacks: React + Spring Boot (main) and React + Node.js (optional).
 - Backend env sample is provided in backend/.env.example.
 - Frontend deploy config for Vercel is provided in frontend/vercel.json.
 
