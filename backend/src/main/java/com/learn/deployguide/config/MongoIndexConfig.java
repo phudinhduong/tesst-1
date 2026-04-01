@@ -12,11 +12,11 @@ public class MongoIndexConfig {
 
     @Bean
     public CommandLineRunner createIndexes(MongoTemplate mongoTemplate) {
-    return args -> {
+        return args -> {
             mongoTemplate.indexOps("stacks")
-                    .ensureIndex(new Index().on("order", Sort.Direction.ASC));
+                    .createIndex(new Index().on("order", Sort.Direction.ASC));
             mongoTemplate.indexOps("steps")
-                    .ensureIndex(new Index()
+                    .createIndex(new Index()
                             .on("stackId", Sort.Direction.ASC)
                             .on("order", Sort.Direction.ASC));
         };
