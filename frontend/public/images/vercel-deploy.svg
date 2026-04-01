@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="560" viewBox="0 0 1000 560">
+  <rect width="1000" height="560" fill="#172554"/>
+  <rect x="65" y="65" width="870" height="430" rx="20" fill="#1e3a8a" stroke="#93c5fd"/>
+  <text x="95" y="135" fill="#eff6ff" font-size="38" font-family="Segoe UI">Step 4: Deploy Frontend to Vercel</text>
+  <text x="95" y="205" fill="#bfdbfe" font-size="22" font-family="Segoe UI">Set VITE_API_BASE_URL to your Render API URL</text>
+  <text x="95" y="250" fill="#dbeafe" font-size="20" font-family="Consolas">npm run build</text>
+  <polygon points="800,180 880,320 720,320" fill="#f8fafc"/>
+  <text x="768" y="360" fill="#dbeafe" font-size="20" font-family="Segoe UI">Vercel</text>
+</svg>

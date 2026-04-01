@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="560" viewBox="0 0 1000 560">
+  <rect width="1000" height="560" fill="#052e2b"/>
+  <rect x="70" y="70" width="860" height="420" rx="18" fill="#064e3b" stroke="#34d399"/>
+  <text x="100" y="140" fill="#ecfdf5" font-size="38" font-family="Segoe UI">Step 2: MongoDB Atlas</text>
+  <text x="100" y="210" fill="#a7f3d0" font-size="22" font-family="Segoe UI">Create cluster, DB user, and network access</text>
+  <text x="100" y="260" fill="#6ee7b7" font-size="20" font-family="Consolas">MONGODB_URI=mongodb+srv://&lt;user&gt;:&lt;password&gt;@cluster/db</text>
+  <ellipse cx="830" cy="300" rx="90" ry="55" fill="#10b981"/>
+  <text x="780" y="307" fill="#022c22" font-size="20" font-family="Segoe UI">Atlas</text>
+</svg>

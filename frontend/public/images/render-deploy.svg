@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="560" viewBox="0 0 1000 560">
+  <rect width="1000" height="560" fill="#1e1b4b"/>
+  <rect x="80" y="80" width="840" height="400" rx="16" fill="#312e81" stroke="#93c5fd"/>
+  <text x="110" y="150" fill="#e0e7ff" font-size="38" font-family="Segoe UI">Step 3: Deploy Backend to Render</text>
+  <text x="110" y="220" fill="#bfdbfe" font-size="22" font-family="Segoe UI">Build: mvn clean package -DskipTests</text>
+  <text x="110" y="265" fill="#bfdbfe" font-size="22" font-family="Segoe UI">Start: java -Dserver.port=$PORT -jar ...</text>
+  <rect x="700" y="170" width="150" height="70" rx="10" fill="#60a5fa"/>
+  <text x="738" y="213" fill="#0f172a" font-size="22" font-family="Segoe UI">Render</text>
+</svg>

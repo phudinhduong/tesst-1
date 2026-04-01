@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="560" viewBox="0 0 1000 560">
+  <rect width="1000" height="560" fill="#0f172a"/>
+  <rect x="60" y="60" width="880" height="440" rx="18" fill="#111827" stroke="#f59e0b"/>
+  <text x="90" y="130" fill="#f9fafb" font-size="38" font-family="Segoe UI">Step 1: Spring Boot Backend</text>
+  <text x="90" y="190" fill="#fbbf24" font-size="28" font-family="Consolas">mvn spring-boot:run</text>
+  <text x="90" y="240" fill="#d1d5db" font-size="22" font-family="Segoe UI">Create API endpoints: /api/v1/stacks and /api/v1/steps</text>
+  <circle cx="860" cy="140" r="48" fill="#22c55e"/>
+  <text x="840" y="148" fill="#0f172a" font-size="20" font-family="Segoe UI">API</text>
+</svg>
