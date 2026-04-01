@@ -114,3 +114,4 @@
   - **Challenge**: No Maven installation or wrapper is available in the repository.
   - **Strategy**: Install Maven in setup step and run all build/test commands with explicit Java 25 and Maven paths.
 
+
