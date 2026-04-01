@@ -106,6 +106,21 @@ Default:
 
 ## Deployment Guide
 
+### 0. Push source code to remote Git repository
+
+If your local repo does not have a remote yet, add one first:
+
+```bash
+git remote add origin <your-git-repo-url>
+git push -u origin main
+```
+
+If remote already exists:
+
+```bash
+git push
+```
+
 ### 1. MongoDB Atlas
 
 1. Create Atlas cluster.
@@ -162,9 +177,17 @@ java -Dserver.port=$PORT -jar target/deploy-guide-api-0.0.1-SNAPSHOT.jar
 5. Click Copy command buttons.
 6. Confirm images render from /public/images.
 
+Optional automated check from workspace root:
+
+```powershell
+./scripts/verify-deploy.ps1 -BackendBaseUrl "https://<your-render-domain>" -FrontendUrl "https://<your-vercel-domain>"
+```
+
 ## Notes
 
 - This MVP is intentionally simple: no auth, no admin UI.
 - Seed data runs once if database is empty.
 - You can add more stacks later (for example React + Node) using the same data model.
+- Backend env sample is provided in backend/.env.example.
+- Frontend deploy config for Vercel is provided in frontend/vercel.json.
 
