@@ -59,6 +59,8 @@ Example response for steps:
 
 ## Local Run
 
+Detailed step-by-step local setup is available at docs/LOCAL_RUN.md.
+
 ### 1. Start Backend
 
 Requirements:
