@@ -61,6 +61,8 @@ Example response for steps:
 
 Detailed step-by-step local setup is available at docs/LOCAL_RUN.md.
 
+Production deployment walkthrough is available at docs/DEPLOY_PRODUCTION.md.
+
 ### 1. Start Backend
 
 Requirements:

@@ -6,19 +6,36 @@ param(
     [string]$FrontendUrl
 )
 
+$BackendBaseUrl = $BackendBaseUrl.TrimEnd('/')
+if ($FrontendUrl) {
+    $FrontendUrl = $FrontendUrl.TrimEnd('/')
+}
+
 Write-Host "Checking backend health..." -ForegroundColor Cyan
-$health = Invoke-RestMethod -Uri "$BackendBaseUrl/api/v1/health" -Method Get
-Write-Host "Health: $health" -ForegroundColor Green
+try {
+    $health = Invoke-RestMethod -Uri "$BackendBaseUrl/api/v1/health" -Method Get
+    Write-Host "Health: $health" -ForegroundColor Green
+}
+catch {
+    Write-Host "Backend health check failed: $($_.Exception.Message)" -ForegroundColor Red
+    exit 1
+}
 
 Write-Host "Checking stacks endpoint..." -ForegroundColor Cyan
 $stacks = Invoke-RestMethod -Uri "$BackendBaseUrl/api/v1/stacks" -Method Get
 Write-Host "Stacks count: $($stacks.Count)" -ForegroundColor Green
 
+if ($stacks.Count -eq 0) {
+    Write-Host "No stacks returned by backend." -ForegroundColor Yellow
+}
+
 if ($stacks.Count -gt 0) {
-    $stackId = $stacks[0].id
-    Write-Host "Checking steps endpoint with stackId=$stackId..." -ForegroundColor Cyan
-    $steps = Invoke-RestMethod -Uri "$BackendBaseUrl/api/v1/steps?stackId=$stackId" -Method Get
-    Write-Host "Steps count: $($steps.Count)" -ForegroundColor Green
+    foreach ($stack in $stacks) {
+        $stackId = $stack.id
+        Write-Host "Checking steps endpoint with stackId=$stackId..." -ForegroundColor Cyan
+        $steps = Invoke-RestMethod -Uri "$BackendBaseUrl/api/v1/steps?stackId=$stackId" -Method Get
+        Write-Host "Steps count for $($stack.name): $($steps.Count)" -ForegroundColor Green
+    }
 }
 
 if ($FrontendUrl) {
