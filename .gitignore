@@ -13,3 +13,7 @@ frontend/dist/
 # IDE
 .vscode/
 .DS_Store
+backend/.idea/
+
+# Accidental backend artifact
+backend/package-lock.json

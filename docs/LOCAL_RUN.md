@@ -10,7 +10,7 @@ This guide helps you run the full project locally:
 
 ### Required versions
 
-- Java 17+
+- Java 25
 - Maven 3.9+
 - Node.js 18+
 - npm 9+
@@ -41,7 +41,7 @@ Example for PowerShell:
 
 ```powershell
 $env:MONGODB_URI="mongodb://localhost:27017/deploy_guide"
-$env:CORS_ALLOWED_ORIGINS="http://localhost:5173,http://localhost:3000"
+$env:CORS_ALLOWED_ORIGINS="http://localhost:5173,http://localhost:5174,http://localhost:3000"
 $env:SEED_DATA_ENABLED="true"
 $env:PORT="8080"
 ```
@@ -99,7 +99,7 @@ npm run dev
 
 Expected:
 
-- Vite starts on http://localhost:5173
+- Vite starts on http://localhost:5173 (or next free port, for example http://localhost:5174)
 - UI shows stack selector and step list
 
 ## 5) Quick API checks
@@ -148,7 +148,7 @@ Cause:
 
 Fix:
 
-- Ensure CORS_ALLOWED_ORIGINS includes http://localhost:5173
+- Ensure CORS_ALLOWED_ORIGINS includes frontend origin (http://localhost:5173 and/or http://localhost:5174)
 
 ### Frontend cannot reach API
 
