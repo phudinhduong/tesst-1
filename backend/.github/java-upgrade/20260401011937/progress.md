@@ -182,27 +182,30 @@
     - Result: ❗ FAILURE (pre-existing compile error at MongoIndexConfig.java:15)
     - Notes: Baseline pass rate is 0 because compile failed before tests executed
   - **Deferred Work**: Resolve compile error during upgrade execution
-  - **Commit**: Pending
+  - **Commit**: 470e123 - Step 2: Setup Baseline - Compile: FAILURE, Tests: 0/0 passed
 
 - **Step 3: Upgrade Runtime and Framework Compatibility**
-  - **Status**: ⏳ In Progress
-  - **Changes Made**: None
+  - **Status**: ✅ Completed
+  - **Changes Made**:
+    - Updated Spring Boot parent from 3.3.4 to 4.0.5
+    - Updated Java version property from 17 to 25
+    - Fixed CommandLineRunner lambda parameter signature
   - **Review Code Changes**:
     - Sufficiency: ✅ All required changes present
     - Necessity: ✅ All changes necessary
       - Functional Behavior: ✅ Preserved
       - Security Controls: ✅ Preserved
   - **Verification**:
-    - Command: Not run yet
-    - JDK: N/A
-    - Build tool: N/A
-    - Result: Pending
+    - Command: `mvn clean test-compile -q`
+    - JDK: C:\Users\dinhphu\.jdk\jdk-25\bin
+    - Build tool: C:\Users\dinhphu\.maven\maven-3.9.14\bin\mvn.cmd
+    - Result: ✅ SUCCESS (main and test sources compiled)
     - Notes: None
-  - **Deferred Work**: None
+  - **Deferred Work**: Run full tests in final validation
   - **Commit**: Pending
 
 - **Step 4: Final Validation**
-  - **Status**: 🔘 Not Started
+  - **Status**: ⏳ In Progress
   - **Changes Made**: None
   - **Review Code Changes**:
     - Sufficiency: ✅ All required changes present
