@@ -1,4 +1,4 @@
 MONGODB_URI=mongodb+srv://admin:admin@cluster0.5vkln3c.mongodb.net/deploy_guide?retryWrites=true&w=majority&appName=Cluster0
-CORS_ALLOWED_ORIGINS=https://<your-vercel-domain>
+CORS_ALLOWED_ORIGINS=https://<your-vercel-domain>,https://*.vercel.app
 SEED_DATA_ENABLED=true
 SPRING_PROFILES_ACTIVE=prod

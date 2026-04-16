@@ -154,7 +154,7 @@ java -Dserver.port=$PORT -jar target/deploy-guide-api-0.0.1-SNAPSHOT.jar
 4. Add environment variables:
 
 - MONGODB_URI=<atlas-uri>
-- CORS_ALLOWED_ORIGINS=https://<your-vercel-domain>
+- CORS_ALLOWED_ORIGINS=https://<your-vercel-domain>,https://*.vercel.app
 - SEED_DATA_ENABLED=true (only first deploy, then set false)
 
 5. Verify:
