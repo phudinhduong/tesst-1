@@ -41,6 +41,14 @@ mvn clean package -DskipTests
 java -Dserver.port=$PORT -jar target/deploy-guide-api-0.0.1-SNAPSHOT.jar
 ```
 
+If Render shows `mvn: command not found`, deploy backend as Docker instead:
+
+1. Create a new Web Service and choose Docker deployment.
+2. Root directory: `backend`
+3. Dockerfile path: `backend/Dockerfile` (or `Dockerfile` if root is already `backend`)
+4. Do not set Java build/start commands manually.
+5. Keep the same environment variables listed below.
+
 ### Environment variables
 
 Set these in Render:
