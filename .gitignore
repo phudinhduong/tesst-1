@@ -17,3 +17,7 @@ backend/.idea/
 
 # Accidental backend artifact
 backend/package-lock.json
+
+# Generated upgrade traces
+backend/.github/java-upgrade/
+.github/java-upgrade/

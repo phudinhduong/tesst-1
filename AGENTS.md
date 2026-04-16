@@ -31,6 +31,11 @@
 - typecheck: `npm run typecheck`
 - build: `npm run build`
 
+## Shared Hooks
+- Canonical hooks live in `hooks/hooks.json` and are shared across all agents.
+- Hook behavior is split into helper scripts under `hooks/scripts/` to keep the policy portable.
+- Protect new generated artifacts by updating `hooks/hooks.json` and `.gitignore` together.
+
 ## Done when
 - requested change is complete
 - relevant checks pass
